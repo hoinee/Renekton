@@ -11,19 +11,16 @@ class Company extends React.Component{
         
         this.state = {
             compayArray : []
+        }
     }
-}
     componentDidMount(){
-        
-     
-              
         
         axios.get('http://localhost:4000/company')
             .then((response)=>{
             
                 const data =  this.state.compayArray.concat(response.data.company)
                 
-                this.setState({companyArray : adta})
+                this.setState({companyArray : data});
         });
     }
     
@@ -31,7 +28,7 @@ class Company extends React.Component{
         
         const {companyArray} = this.state;
          
-        const list = compayArray.map((v)=>{  
+        const list = companyArray.map((v)=>{  
             return(
                 <Card 
                 company : {v.company}
