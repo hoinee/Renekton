@@ -33,4 +33,32 @@ app.post('/login',function(req,res){
     }
 });
 
+const companyList = require('./data');    
+
+app.get('/compnay', function(req,res){
+   res.jsom(compnayList) ;
+});
+
 const server = app.listen(4000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
